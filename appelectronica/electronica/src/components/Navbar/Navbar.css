@@ -1,0 +1,69 @@
+.NavBar {
+  display: flex;
+  background: transparent;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  background: rgb(179, 245, 190);
+}
+.Categories {
+  display: center;
+  justify-content: space-aroucented;
+  align-items: center;
+}
+
+.Option {
+  color: #8C30F5; 
+ text-decoration: none;
+  border-radius: 25;
+  margin: 0 50px;
+
+ width: auto;
+  padding: 16px;
+  font-size: 12px;
+  background: hsl(268, 91%, 57%);
+  border-radius: 8px;
+  flex: none;
+  display: flex;
+  order: 2;
+  align-self: center;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(235, 8, 163);
+  border: none;
+  border-style: none;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.ActiveOption {
+  color: #8C30F5; 
+ text-decoration: none;
+  border-radius: 25;
+  margin: 0 50px;
+
+ width: auto;
+  padding: 14px;
+  font-size: 10px;
+  background: rgb(0, 255, 55);
+  border-radius: 8px;
+  flex: none;
+  display: flex;
+  order: 1;
+  align-self: center;
+  flex-grow: 3;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  border: none;
+  border-style: none;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.NavLink {
+  color :rgba(81, 255, 0, 0.733)
+}

@@ -1,0 +1,14 @@
+.Titulo {
+    color: green
+    
+} 
+
+.Parrafo {
+    color: blue
+}
+.display {
+    display: center;
+}
+.onClick {
+    color: rgb(239, 24, 193);
+}
