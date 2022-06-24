@@ -1,62 +1,49 @@
-import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import { getProducts, getProductsByCategory } from '../../asyncmock'
-import ItemLis from '../ItemList/ItemList'
+import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 
-
 const ItemListContainer = (props) => {
-
     const [products, setProducts] = useState([])
-    const [loading, setLoading ] = useState(true)
-    const { categoryId} = useParams()
+    const [loading, setLoading] = useState(true)
+
+    const { categoryId } = useParams()
 
 
     useEffect(() => {
         setLoading(true)
 
-        const onResize = () => {
-            console.log('cambio')
-    }
-
-        window.addEventListener('resize', onResize)
-
-        return () => {
-            window.removeEventListener('resize', onResize)
-        }
-    }, [])
-    
-    useEffect(() => {
-        if (!categoryId) {
-            getProducts().then(response => {
-                setProducts(response)
+        if(!categoryId) {
+            getProducts().then(prods => {
+                setProducts(prods)
             }).catch(error => {
                 console.log(error)
             }).finally(() => {
                 setLoading(false)
             })
         } else {
-            getProductsByCategory(categoryId).then(response => {
-                setProducts(response)
+            getProductsByCategory(categoryId).then(prods => {
+                setProducts(prods)
             }).catch(error => {
                 console.log(error)
             }).finally(() => {
                 setLoading(false)
             })
         }
+        
     }, [categoryId])
 
-    if(loading)
-        return <h1>CARGANDO......</h1>
+    if(loading) {
+        return <h1>Cargando...</h1>
+    }
 
-
-    return (
+    return(
         <div>
-
-            <h1 className='Titulo'>{props.greeting}</h1>
-            {products.length > 0
-                ?<ItemLis products={products} />
-                : <h1>SIN stock</h1>}
+            <h1>{props.greeting}</h1>
+            {products.length > 0 
+                ? <ItemList products={products}/>
+                : <h1>Sin Stock</h1>
+            }
         </div>
     )
 }

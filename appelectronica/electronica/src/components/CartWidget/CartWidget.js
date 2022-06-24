@@ -1,11 +1,19 @@
-const CartWidgets = () => {
-    return (
-        
-        <div style={{ backgroundImage: 'blue'}}>
-            <img src='/images/cartw.jpg' alt='cart-widget' />
-            0
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
+
+const CartWidget = () => {
+
+    const { getCartQuantity, totalQuantity } = useContext(CartContext)
+  
+    return(
+        <div className="CartWidget">
+            <img src="/images/cart.svg" alt='cart' className='CartImg'/>
+            { totalQuantity }
         </div>
-           )
+    );
 }
-       
-export default CartWidgets
+
+export default CartWidget
+
+
+
