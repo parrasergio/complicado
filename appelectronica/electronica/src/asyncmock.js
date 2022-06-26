@@ -6,7 +6,7 @@ const products = [
         category: 'Monitores', 
         img:'../images/monitores.jpg', 
         stock: 25, 
-        description:'cantidad 60 hz'
+        description:'calidad 60 hz'
     },
     {  
          id: '2',
